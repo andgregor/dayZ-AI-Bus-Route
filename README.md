@@ -3,10 +3,9 @@ dayZ-AI-Bus-Route
 
 AI controlled bus route for dayZ
 
-/*
-	DayZ AI controlled Bus Route System
-	Made for DayZ Epoch please ask permission to use/edit/distrubute email axeman@thefreezer.co.uk / gregory.andrew@gmail.com
-*/
+
+DayZ AI controlled Bus Route System - Made for DayZ Epoch please ask permission to use/edit/distrubute email axeman@thefreezer.co.uk / gregory.andrew@gmail.com
+
 
 This script creates an invulnerable bus, driver and drivers mate. The bus drives from NE of Chernarus to SW and loops around. 
 
