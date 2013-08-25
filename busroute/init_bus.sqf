@@ -126,27 +126,27 @@
 	};
 	
 	waitUntil{!isNull _axeBus};
-	diag_log format ["AXLOG:BUS: Bus Spawned:%1 | Group:%2",_axeBus,_axeBusGroup];
+	//diag_log format ["AXLOG:BUS: Bus Spawned:%1 | Group:%2",_axeBus,_axeBusGroup];
 	
 	private["_survivors"];
 	//Monitor Bus
 	while {alive _axeBus} do {
-	diag_log format ["AXLOG:BUS: Tick:%1",time];
+	//diag_log format ["AXLOG:BUS: Tick:%1",time];
 		//Fuel Bus
 		if(fuel _axeBus < 0.2)then{
 		_axeBus setFuel 0.3;
-		diag_log format ["AXLOG:BUS: Fuelling Bus:%1 | Group:%2",_axeBus,_axeBusGroup];
+		//diag_log format ["AXLOG:BUS: Fuelling Bus:%1 | Group:%2",_axeBus,_axeBusGroup];
 		};
 		
 		//Keep Bus Alive - Shouldn't be required.
 		if(damage _axeBus>0.4)then{
 		_axeBus setDamage 0;
-		diag_log format ["AXLOG:BUS: Repairing Bus:%1 | Group:%2",_axeBus,_axeBusGroup];
+		//diag_log format ["AXLOG:BUS: Repairing Bus:%1 | Group:%2",_axeBus,_axeBusGroup];
 		};
 		
 		//Monitor Driver
 		if((driver _axeBus != _axeBusDriver)||(driver _axeBus != _axeBusUnit))then{
-		diag_log format ["AXLOG:BUS: Driver Required:%1",driver _axeBus];
+		//diag_log format ["AXLOG:BUS: Driver Required:%1",driver _axeBus];
 		units _axeBusGroup select 0 assignAsDriver _axeBus;
 		units _axeBusGroup select 0 moveInDriver _axeBus;
 		};
