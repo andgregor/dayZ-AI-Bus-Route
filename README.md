@@ -20,3 +20,9 @@ Known Issues: Beeping of the bus horn,when near a survivor, is still a work in p
 For support and bug reports please use: http://opendayz.net/threads/dayz-arma-ai-controlled-bus-route.10057/ or email (one of the above).
 
 Enjoy !
+
+INSTALLATION:
+
+Add the entried to your init.sqf
+Create a folder bus_route (in your mission folder)
+Add the other files to the bus_route folder..
