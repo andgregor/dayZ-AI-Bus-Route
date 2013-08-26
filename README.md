@@ -23,6 +23,6 @@ Enjoy !
 
 INSTALLATION:
 
-Add the entries to your init.sqf
-Create a folder bus_route (in your mission folder)
+Add the entries to your init.sqf ->
+Create a folder bus_route (in your mission folder) ->
 Add the other files to the bus_route folder..
