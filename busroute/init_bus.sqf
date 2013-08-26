@@ -1,4 +1,3 @@
-
 	private ["_axeBusUnit","_firstRun","_dir","_axWPZ","_unitpos","_rndLOut","_ailoadout","_aiwep","_aiammo","_axeBus","_axeBusGroup","_axeBuspawnpos","_axeBusWPradius","_axeBusWPIndex","_axeBusFirstWayPoint","_axeBusWP","_axeBusRouteWaypoints","_axeBusDriver","_axeBusLogicGroup","_axeBusLogicCenter"];
 	_axeBusUnit = objNull;
 	_axeBusGroup = createGroup RESISTANCE;
@@ -31,14 +30,14 @@
 	_axeBusWP = _axeBusGroup addWaypoint [_axeBusFirstWayPoint, _axeBusWPradius,_axeBusWPIndex];
 	_axeBusWP setWaypointType "MOVE";
 	_axeBusRouteWaypoints = [[12984,8362.67,_axWPZ],[13279.1,6991.32,_axWPZ],[13464.2,6255.24,_axWPZ],[13386.8,5405.25,_axWPZ],[12025.6,3481.76,_axWPZ],[10504.4,2324.99,_axWPZ],[10321.8,2149.75,_axWPZ],[10028,2071.8,_axWPZ],[9503.53,2028.21,_axWPZ],[6587.65,2884.59,_axWPZ],[6354.47,2452.24,_axWPZ],[4565.79,2432.13,_axWPZ],[1907.21,2240.25,_axWPZ],[1689.06,2209.53,_axWPZ],[1845.55,2219.14,_axWPZ],[1940.8,2255.24,_axWPZ],[3559.56,2448.9,_axWPZ],[4541.37,2443.16,_axWPZ],[5816.09,2167.39,_axWPZ],[6408.19,2685.99,_axWPZ],[6570.5,2877.59,_axWPZ],[9945.28,2049.85,_axWPZ],[10283.4,2146.71,_axWPZ],[10389.4,2221.85,_axWPZ],[10498.9,2320.29,_axWPZ],[10888.2,2772.58,_axWPZ],[12025.9,3485.04,_axWPZ],[13005.9,3816.02,_axWPZ],[13451.5,6211.28,_axWPZ],[13419.9,6557.19,_axWPZ],[13287.7,6961.19,_axWPZ],[12930.4,10133,_axWPZ]];
-	/*
+	
 	{
 	_axeBusWPIndex=_axeBusWPIndex+1;
 	_axeBusWP = _axeBusGroup addWaypoint [_x, _axeBusWPradius,_axeBusWPIndex];
 	_axeBusWP setWaypointType "MOVE";
 	diag_log format ["BUS:Waypoint Added: %2 at %1",_x,_axeBusWP];
 	} forEach _axeBusRouteWaypoints;
-	*/
+	
 	//Create Loop Waypoint
 	_axeBusWP = _axeBusGroup addWaypoint [_axeBusFirstWayPoint, _axeBusWPradius,_axeBusWPIndex+1];
 	_axeBusWP setWaypointType "CYCLE";
