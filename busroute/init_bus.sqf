@@ -35,6 +35,7 @@
 	_axeBusWPIndex=_axeBusWPIndex+1;
 	_axeBusWP = _axeBusGroup addWaypoint [_x, _axeBusWPradius,_axeBusWPIndex];
 	_axeBusWP setWaypointType "MOVE";
+	_axeBusWP setWaypointTimeout [10, 15, 20];
 	diag_log format ["BUS:Waypoint Added: %2 at %1",_x,_axeBusWP];
 	} forEach _axeBusRouteWaypoints;
 	
