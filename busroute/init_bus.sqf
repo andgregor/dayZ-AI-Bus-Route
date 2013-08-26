@@ -15,12 +15,6 @@
 	RESISTANCE setFriend [EAST,0];//Don't like banditos !
 	WEST setFriend [RESISTANCE,1];
 	EAST setFriend [RESISTANCE,0];
-	
-	//Create Logic for Bus Commands
-	_axeBusLogicCenter = createCenter sideLogic;
-	_axeBusLogicGroup = createGroup _axeBusLogicCenter;
-	axeBusLogic = objNull;
-	axeBusLogic = _axeBusLogicGroup createUnit ["LOGIC",_axeBuspawnpos , [], 0, ""];
 	};
 	
 	//Load Bus Route
@@ -35,7 +29,7 @@
 	_axeBusWPIndex=_axeBusWPIndex+1;
 	_axeBusWP = _axeBusGroup addWaypoint [_x, _axeBusWPradius,_axeBusWPIndex];
 	_axeBusWP setWaypointType "MOVE";
-	_axeBusWP setWaypointTimeout [10, 15, 20];
+	_axeBusWP setWaypointTimeout [20, 30, 35];
 	diag_log format ["BUS:Waypoint Added: %2 at %1",_x,_axeBusWP];
 	} forEach _axeBusRouteWaypoints;
 	
@@ -128,7 +122,6 @@
 	waitUntil{!isNull _axeBus};
 	//diag_log format ["AXLOG:BUS: Bus Spawned:%1 | Group:%2",_axeBus,_axeBusGroup];
 	
-	private["_survivors"];
 	//Monitor Bus
 	while {alive _axeBus} do {
 	//diag_log format ["AXLOG:BUS: Tick:%1",time];
@@ -150,37 +143,7 @@
 		units _axeBusGroup select 0 assignAsDriver _axeBus;
 		units _axeBusGroup select 0 moveInDriver _axeBus;
 		};
-		
-		//Nearby Survivors - Logic needs localising..
-		/*
-		_survivors = (position _axeBus) nearEntities [["Survivor1_DZ","SurvivorW1_DZ","Survivor2_DZ","SurvivorW2_DZ","Camo1_DZ","Sniper1_DZ"],250];
-		if(count _survivors >0)then{
-		
-			if((_survivors select 0) distance axBus >10)then{
-			_axeBusDriver stop true;
-			diag_log format["Beeping Horn:At:%1",player];
-			
-			axeBusLogic action ["useWeapon",_axeBus,_axeBusDriver,0];
-			sleep .2;
-			axeBusLogic action ["useWeapon",_axeBus,_axeBusDriver,0];
-			sleep .2;
-			
-			_axeBusDriver setBehaviour "STEALTH";
-			_axeBusDriver action ["LightOn",_axeBus];
-			sleep .2;
-			_axeBusDriver action ["LightOff",_axeBus];
-			sleep .2;
-			_axeBusDriver action ["LightOn",_axeBus];
-			sleep .2;
-			_axeBusDriver action ["LightOff",_axeBus];
 
-			axeBusLogic action ["useWeapon",_axeBus,_axeBusDriver,0];
-			sleep .2;
-			_axeBusDriver setBehaviour "CARELESS";
-			_axeBusDriver stop false;
-			};
-			*/
-		};
 	sleep 3;
 	};
 	
