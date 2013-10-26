@@ -45,7 +45,10 @@
     _axeBus setVariable ["ObjectID", [_dir,getPos _axeBus] call dayz_objectUID2, true];
     _axeBus setFuel .3;
 	_axeBus allowDammage false;
-	dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_axeBus];
+	//Uncomment for normal dayZ
+	//dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_axeBus];
+	//For Epoch - Comment out for normal dayZ | Credit to Flenz
+	PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_axeBus];
 	[_axeBus,"Ikarus_TK_CIV_EP1"] spawn server_updateObject;
 	
 	//Make Permanent on some builds.. No Need really,
